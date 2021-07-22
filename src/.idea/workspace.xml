@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a85796f4-199f-49c2-bcc3-58bf6da447f2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Chess.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Board/Board.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Board/Move.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Game$WhiteButton.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Game.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Pieces/Pieces$Type.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Pieces/Pieces.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Pieces/Player.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/Bishop.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/King.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/Knight.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/Pawn.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/Queen.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/Rook.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../out/production/Chess/Type/SetPieces.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Board/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Board/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pieces/Pieces.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pieces/Player.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/Bishop.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/Rook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Type/SetPieces.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1vPj5D4f4V45kjAxTfTWZ7nN1FR" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a85796f4-199f-49c2-bcc3-58bf6da447f2" name="Default Changelist" comment="" />
+      <created>1626470433227</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1626470433227</updated>
+    </task>
+    <servers />
+  </component>
+</project>

@@ -26,7 +26,7 @@ public class Game {
         frame.getContentPane().setBackground(new Color(73, 69, 69));
 
         WhiteButton wh = new WhiteButton();
-
+//
         for(JButton [] spotv : spots){
             for(JButton spoth : spotv){
                 spoth.addActionListener(wh);
