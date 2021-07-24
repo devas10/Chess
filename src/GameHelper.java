@@ -1,13 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Arrays;
 
 import Board.Board;
 import Pieces.Pieces;
 import Board.Move;
 import Pieces.Player;
 
-public class Game {
+public class GameHelper {
 
     static Player [] players = new Player[2];
     static JButton [][] spots =new  JButton [8][8];
@@ -15,23 +16,27 @@ public class Game {
     static JFrame frame = new JFrame("CHESS");
     static JPanel f = new JPanel();
 
-    public static void main(String [] args){
-
+    GameHelper(){
 
         Board b =new Board();
         b.initializeboard(spots,p,f);
+        Player black = new Player();
+        Player white = new Player();
+        players[0]=white;
+        players[1]=black;
+        b.SetupPieces(players,p,spots);
         frame.add(f);
-        frame.setSize(800,800);
-        frame.setVisible(true);
         frame.getContentPane().setBackground(new Color(73, 69, 69));
-
         WhiteButton wh = new WhiteButton();
-//
-        for(JButton [] spotv : spots){
-            for(JButton spoth : spotv){
-                spoth.addActionListener(wh);
-            }
-        }
+        Dimension ButtonSize = new Dimension(105,105);
+        Arrays.stream(spots).flatMap(Arrays::stream).forEach(spotTemp -> {
+            spotTemp.setPreferredSize(ButtonSize);
+            spotTemp.addActionListener(wh);
+        });
+        frame.setResizable(false);
+        frame.pack();
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     } // close
     public static class WhiteButton implements ActionListener{
         JButton move1 =new JButton();
@@ -46,7 +51,6 @@ public class Game {
                 try{
                     if(move1.getComponent(0)!=null){
                         move = 1;
-                        move1.getModel().setPressed(true);
                     }
                 }catch (Exception e){}
                 //  System.out.println(move1);
@@ -83,6 +87,7 @@ public class Game {
                 int m2=k;
                 int n2=l;
                 try{
+
                     if(p[m1][n1].isWhite()==p[m2][n2].isWhite()){
                         move=0;
                         break br;
@@ -92,6 +97,7 @@ public class Game {
                 if(Move.Mover(m1,n1,m2,n2,p,spots)){
                     try{
                         move2.remove((JLabel)move2.getComponent(0));
+
                     } catch (Exception e){}
                     JLabel button = (JLabel)move1.getComponent(0);
 
@@ -103,10 +109,6 @@ public class Game {
                         p[m2][n2]=p[m1][n1];
                         p[m1][n1]=null;
                     } catch (Exception e){}
-
-
-
-                    //System.out.println(move1+"      "+move2);
                 }
                 move = 0;
 

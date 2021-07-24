@@ -24,7 +24,6 @@ public class Bishop {
             }
             s+= opp1;
             e+= opp2;
-
         }
         return true;
     }

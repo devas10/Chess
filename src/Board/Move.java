@@ -21,11 +21,9 @@ public class Move{
                 return is;
             }
             case "Q" -> {
-                is = Queen.isValid(m1, n1, m2, n2);
-                if (is) {
-                    is = Queen.CheckPath(m1, n1, m2, n2, spots);
-                }
-                return is;
+                char QueenType;
+                QueenType = Queen.isValid(m1, n1, m2, n2);
+                return Queen.CheckPath(m1, n1, m2, n2, spots,QueenType);
             }
             case "B" -> {
                 is = Bishop.isValid(m1, n1, m2, n2);
@@ -57,12 +55,6 @@ public class Move{
             }
             default -> is = false;
         }
-  /*  if(is==true){
-
-      JLabel temp = spots[m1][n1].getComponent(0);
-      spots[m1][n1].remove(temp);
-      spots[m2][n2].add(temp);
-    }*/
         return is;
     }
 }
