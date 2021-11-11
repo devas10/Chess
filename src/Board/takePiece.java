@@ -7,9 +7,11 @@ import java.awt.*;
 public class takePiece{
     private JFrame frame;
     private JButton[] takepieceset = new JButton[4];
+    private JButton[] takepieceset1 = new JButton[4];
     private final String [] type = {"R","H","B","Q"};
     private final String [] typeName = {"ROOK","KHIGHT","BISHOP","QUEEN"};
     private final String [] label = { "\u265C", "\u265E", "\u265D", "\u265B"};
+    private final String [] labelWhite = {"\u2656", "\u2658", "\u2657", "\u2655"};
 
     public void initialize(boolean pieceColor, int x, int y,JButton[][] pack,Pieces[][] set){
         Pieces newPiece = new Pieces();
@@ -30,26 +32,31 @@ public class takePiece{
             tempButton.setBackground(new Color(213, 157, 48));
             JLabel label1 = new JLabel("");
             JLabel label2 = new JLabel("");
-            if(pieceColor){
-                label1.setForeground(Color.WHITE);
-                label2.setForeground(Color.WHITE);
-            }
             label1.setFont(font);
             label2.setFont(font1);
             label2.setText(typeName[temp]);
-            label1.setText(label[temp]);
+            if(pieceColor){
+               // label1.setForeground(Color.WHITE); //coloring piece white
+                label2.setForeground(Color.WHITE);
+                label1.setText(labelWhite[temp]);
+            }
+            else{
+                label1.setText(label[temp]);
+            }
             tempButton.add(label1,JButton.CENTER);
             tempButton.add(label2,Component.CENTER_ALIGNMENT);
             takepieceset[temp] = tempButton;
+
             takePiecePanel.add(tempButton);
             tempButton.addActionListener(e -> {
                 int temp1;
                 for(temp1 =0; temp1 <4; temp1++) if (takepieceset[temp1] == (JButton) e.getSource()) break;
                 JLabel templ = (JLabel)pack[x][y].getComponent(0);
-                if(pieceColor) {
-                    templ.setForeground(Color.WHITE);
-                }
                 templ.setText(label[temp1]);
+                if(pieceColor) {
+                    templ.setText(labelWhite[temp1]);
+                   // templ.setForeground(Color.WHITE);
+                }
                 set[x][y].setType(type[temp1]);
                 frame.dispose();
             });

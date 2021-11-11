@@ -3,21 +3,23 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Arrays;
 
-import Board.Board;
+import Board.*;
 import Pieces.Pieces;
 import Board.Move;
 import Pieces.Player;
 
 public class GameHelper {
 
+    enum GameColor{
+        WHITE, BLACK
+    }
     static Player [] players = new Player[2];
     static JButton [][] spots =new  JButton [8][8];
     static Pieces[][] p = new Pieces[8][8];
     static JFrame frame = new JFrame("CHESS");
     static JPanel f = new JPanel();
 
-    GameHelper(){
-
+    void start(){
         Board b =new Board();
         b.initializeboard(spots,p,f);
         Player black = new Player();
@@ -42,17 +44,12 @@ public class GameHelper {
         JButton move1 =new JButton();
         int move = 0;
         int m1,n1;
-
+        GameColor CurrentColor = GameColor.WHITE;
         @Override
         public void actionPerformed(ActionEvent a){
             br:
             if(move == 0){
                 move1 =(JButton)a.getSource();
-                try{
-                    if(move1.getComponent(0)!=null){
-                        move = 1;
-                    }
-                }catch (Exception e){}
                 //  System.out.println(move1);
                 int i=0,j=0;
                 dev:
@@ -66,6 +63,15 @@ public class GameHelper {
                 //System.out.println(move1);
                 m1=i;
                 n1=j;
+                System.out.println(CurrentColor);
+
+                try{
+                    if(move1.getComponent(0)!=null ){
+                        if(CurrentColor == GameColor.BLACK && !p[m1][n1].isWhite()){move = 1;}
+                        else if(CurrentColor == GameColor.WHITE && p[m1][n1].isWhite()){move = 1;}
+                        else {JOptionPane.showMessageDialog(null, "PLEASE SELECT ONLY " + CurrentColor + " PIECES"); }
+                    }
+                }catch (Exception e){}
             } // close if
 
             else if(move==1) {
@@ -95,35 +101,28 @@ public class GameHelper {
                 } catch (Exception e){}
                 //System.out.print(chess.Move.Move(m1,n1,m2,n2,p,spots));
                 if(Move.Mover(m1,n1,m2,n2,p,spots)){
-                    try{
-                        move2.remove((JLabel)move2.getComponent(0));
-
-                    } catch (Exception e){}
-                    JLabel button = (JLabel)move1.getComponent(0);
-
-                    move2.add(button);
-                    move1.remove(button);
-                    move1 = null;
-
-                    try{
-                        p[m2][n2]=p[m1][n1];
-                        p[m1][n1]=null;
-                    } catch (Exception e){}
+                    JButton temp1 = move1;
+                    JButton temp2 = move2;
+                    Move.Remover(move1,move2,p,m1,n1,m2,n2);
+                  //  if(Check.Checker(p,spots,p[m1][n1].isWhite())){System.out.println("chek")}
+                    CurrentColor = (CurrentColor==GameColor.WHITE)? GameColor.BLACK : GameColor.WHITE;
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Wrong Move.");
                 }
                 move = 0;
 
             } // close else
+
             frame.revalidate();
             frame.repaint();
 
         }// actionPerformed
-    } //whtebutton
-    void changeplayer (Player current){
-        if(current == players[0]){
-            current = players[1];
-        }
-        else{
-            current = players[0];
-        }
-    }
+
+
+    } //Whitebutton
+
+
+
+
 }

@@ -57,4 +57,21 @@ public class Move{
         }
         return is;
     }
+
+    public static void Remover(JButton move1, JButton move2, Pieces[][] p, int m1, int n1, int m2, int n2){
+        try{
+            move2.remove((JLabel)move2.getComponent(0));
+
+        } catch (Exception e){}
+        JLabel button = (JLabel)move1.getComponent(0);
+        move2.add(button);
+        move1.remove(button);
+        move1 = null;
+
+        try{
+            p[m2][n2]=p[m1][n1];
+            p[m1][n1]=null;
+        } catch (Exception e){}
+        return;
+    }
 }

@@ -21,11 +21,10 @@ public class Board {
 
                 JButton button = new JButton();
 
-
                 if ((ver + hor) % 2 == 0) {
-                    button.setBackground(new Color(213, 157, 48));
-                } else {
                     button.setBackground(new Color(212, 192, 192));
+                } else {
+                    button.setBackground(new Color(213, 157, 48));
                 }
 
                 panel.add(button);
@@ -61,7 +60,11 @@ public class Board {
                 spots[ver][hor].add(label);
                 set[ver][hor] = p;
                 if (ver < 2) {play[1].addButton(spots[ver][hor]); play[1].addPiece(p); }
-                if (ver > 5) {play[0].addButton(spots[ver][hor]); p.setWhite(true); play[0].addPiece(p);}
+                if (ver > 5) {
+                    play[0].addButton(spots[ver][hor]);
+                    p.setWhite(true);
+                    //label.setForeground(Color.WHITE);  coloring peice white
+                    play[0].addPiece(p);}
             }
 
             System.out.println();
